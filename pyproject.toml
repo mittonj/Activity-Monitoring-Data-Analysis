@@ -1,0 +1,23 @@
+# [tool.yapfignore]
+# ignore_patterns = [
+#   "temp/**/*.py",
+#   "temp2/*.py"
+# ]
+
+[tool.yapf]
+# https://github.com/google/yapf/blob/main/yapf/yapflib/style.py#L418
+BASED_ON_STYLE = "pep8"
+USE_TABS = false
+COLUMN_LIMIT = 80
+INDENT_DICTIONARY_VALUE = true
+SPACES_AROUND_DEFAULT_OR_NAMED_ASSIGN = true
+
+[tool.pyright]
+# https://github.com/microsoft/pyright/blob/main/docs/configuration.md
+# https://github.com/microsoft/pyright/blob/main/docs/comments.md
+executionEnvironments = [
+  { root = "./" }
+]
+# `python -c 'from site import getsitepackages; print(f"extraPaths = [ \"{getsitepackages()[0]}\" ]")' >> pyproject.toml`
+# extraPaths = [ "/VENV/lib/python3.11/site-packages" ]
+# `python -c 'from site import getsitepackages; from json import dumps; print(dumps(dict(extraPaths = [getsitepackages()[0]]), indent="\t"))' >> pyrightconfig.json`
